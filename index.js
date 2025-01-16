@@ -9,9 +9,34 @@ const files = fs.readdirSync("./input");
 //     }
 // })
 
+// for(let i = 0 ; i < files.length ; i++){
+  
+//     sharp(`./input/${files[i]}`).toFile(`./output/${i}.webp`,(err,info)=>{
+//         if(err) {
+//             console.error(err)
+//         }else{
+//             console.log(info);
+//         }
+//     })
+// }
+
+//resize bolon quality
+// for(let i = 0 ; i < files.length ; i++){
+  
+//     sharp(`./input/${files[i]}`).resize(200,300).toFile(`./output/${i}.webp`,(err,info)=>{
+//         if(err) {
+//             console.error(err)
+//         }else{
+//             console.log(info);
+//         }
+//     })
+// }
+
 for(let i = 0 ; i < files.length ; i++){
   
-    sharp(`./input/${files[i]}`).toFile(`./output/${i}.webp`,(err,info)=>{
+    sharp(`./input/${files[i]}`).webp({
+        quality: 100
+    }).toFile(`./output/${i}.webp`,(err,info)=>{
         if(err) {
             console.error(err)
         }else{
