@@ -1,34 +1,11 @@
 import fs, { readdirSync } from 'fs';
 import sharp  from 'sharp';
-const files = fs.readdirSync("./input");
-// sharp('./input/nature-1.png').toFile("output.webp",(err,info)=>{
-//     if(err){
-//         console.log(err);
-//     }else{
-//         console.log(info);
-//     }
-// })
 
-// for(let i = 0 ; i < files.length ; i++){
-  
-//     sharp(`./input/${files[i]}`).toFile(`./output/${i}.webp`,(err,info)=>{
-//         if(err) {
-//             console.error(err)
-//         }else{
-//             console.log(info);
-//         }
-//     })
-// }
+import readline from 'readline';
+import {stdin as input, stdout as output } from 'node:process';
 
-//resize bolon quality
-// for(let i = 0 ; i < files.length ; i++){
-  
-//     sharp(`./input/${files[i]}`).resize(200,300).toFile(`./output/${i}.webp`,(err,info)=>{
-//         if(err) {
-//             console.error(err)
-//         }else{
-//             console.log(info);
-//         }
-//     })
-// }
-
+const rl = readline.createInterface({input,output});
+rl.question('What do you think of Node.js? ',(answer)=> {
+    console.log(`Thank you for your valuable feedback: ${answer}`);
+    rl.close();
+});
